@@ -17,6 +17,6 @@ if os.path.exists(test_image_path):
     with torch.no_grad():
         image_embedding = model.encode_image(image)
     
-    print("✅ Image Embedding Generated:", image_embedding.shape)
+    print("Image Embedding Generated:", image_embedding.shape)
 else:
-    print("❌ Test image not found!")
+    print("Test image not found!")
