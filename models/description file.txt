@@ -1,0 +1,8 @@
+quantized_model.trt will be created here in this folder.
+
+It is created by running a TensorRT model quantization script. The process involves:
+
+1. Loading a Pretrained Model (e.g., OpenAI's CLIP).
+2. Converting the Model to ONNX format (if not already in ONNX).
+3. Applying TensorRT Optimization to reduce model size and improve inference speed.
+4. Saving the Quantized Model as quantized_model.trt
