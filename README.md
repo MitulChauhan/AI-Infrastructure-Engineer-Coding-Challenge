@@ -59,9 +59,27 @@ python scripts/populate_db.py
 
 ### **5. Quantize Model with TensorRT**
 
+#### **Ensure TensorRT is Installed:**
+- If using Docker:
+  ```sh
+  docker run --gpus all --rm -it nvcr.io/nvidia/tensorrt:latest bash
+  ```
+- If installing manually:
+  ```sh
+  pip install nvidia-pyindex
+  pip install nvidia-tensorrt
+  ```
+
+#### **Run the Quantization Script:**
 ```sh
 python scripts/quantize_model.py
 ```
+
+#### **Verify the Quantized Model Exists:**
+```sh
+ls models/
+```
+- You should see `quantized_model.trt` inside the **models/** directory.
 
 ### **6. Start NVIDIA Triton Inference Server**
 
@@ -111,7 +129,7 @@ curl -X GET "http://127.0.0.1:5000/logs"
 docker build -t ai-product-matching .
 docker run -p 5000:5000 ai-product-matching
 ```
----
 
+---
 
 For any questions, feel free to reach me out through email: chauhanmitul1301@gmail.com!
